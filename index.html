@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몽비스토리 사업 계획서</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { 50:'#fdf8f0', 100:'#faecd8', 200:'#f4d5a8', 300:'#ecb96e', 400:'#e4993a', 500:'#d97b1a', 600:'#b86012', 700:'#924812', 800:'#763a15', 900:'#633116' },
+        ink: { 50:'#f6f7f9', 100:'#eceef2', 200:'#d5d9e2', 300:'#b1bac8', 400:'#8794a8', 500:'#65748e', 600:'#4f5d75', 700:'#414c60', 800:'#384151', 900:'#313945' },
+      }
+    }
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap');
+  body { font-family: 'Noto Sans KR', sans-serif; }
+
+  .prose h1 { font-size: 2.25rem; font-weight: 800; color: #313945; margin-bottom: 0.5rem; line-height: 1.25; }
+  .prose h2 { font-size: 1.65rem; font-weight: 700; color: #384151; margin-top: 4rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 3px solid #f4d5a8; }
+  .prose h3 { font-size: 1.25rem; font-weight: 600; color: #414c60; margin-top: 2.5rem; margin-bottom: 1rem; }
+  .prose h4 { font-size: 1.1rem; font-weight: 600; color: #4f5d75; margin-top: 2rem; margin-bottom: 0.75rem; }
+  .prose p  { font-size: 1rem; line-height: 1.75; color: #414c60; margin-bottom: 1rem; }
+  .prose strong { font-weight: 700; color: #313945; }
+  .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #414c60; }
+  .prose ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #414c60; }
+  .prose li { line-height: 1.75; margin-bottom: 0.25rem; }
+  .prose blockquote { border-left: 4px solid #ecb96e; background: #fdf8f0; padding: 0.75rem 1rem 0.75rem 1.25rem; margin: 1.5rem 0; border-radius: 0 0.5rem 0.5rem 0; color: #4f5d75; font-style: italic; }
+  .prose hr { margin: 3rem 0; border: none; border-top: 1px solid #d5d9e2; }
+  .prose a { color: #b86012; text-decoration: underline; }
+  .prose a:hover { color: #763a15; }
+
+  /* 표 — 둥근 모서리 + 그림자 */
+  .prose table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 1.5rem 0; font-size: 0.875rem; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06); }
+  .prose thead { background: #384151; color: #fff; }
+  .prose thead th { padding: 0.85rem 1rem; text-align: left; font-weight: 600; letter-spacing: 0.025em; }
+  .prose tbody tr { border-bottom: 1px solid #eceef2; transition: background 0.15s; }
+  .prose tbody tr:hover { background: rgba(253,248,240,0.7); }
+  .prose tbody td { padding: 0.75rem 1rem; color: #414c60; }
+  .prose tbody tr:nth-child(even) { background: rgba(246,247,249,0.5); }
+  .prose tbody tr:nth-child(even):hover { background: rgba(253,248,240,0.7); }
+
+  /* 코드 */
+  .prose code { background: #eceef2; color: #924812; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.875rem; font-family: 'SF Mono', Menlo, monospace; }
+  .prose pre { background: #1e293b; color: #86efac; padding: 1.25rem; border-radius: 0.75rem; margin: 1.5rem 0; overflow-x: auto; font-size: 0.85rem; line-height: 1.7; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+  .prose pre code { background: transparent; color: #86efac; padding: 0; font-size: 0.85rem; }
+
+  .prose td:first-child { white-space: nowrap; }
+
+  @media print {
+    body { font-size: 11pt; }
+    .prose h2 { break-before: page; }
+    .no-print { display: none; }
+  }
+</style>
+</head>
+<body class="bg-gradient-to-br from-ink-50 via-white to-brand-50 min-h-screen">
+
+<!-- 히어로 -->
+<header class="bg-ink-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <p class="text-brand-300 text-sm font-semibold tracking-widest uppercase mb-4">Business Plan 2026</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">몽비스토리</h1>
+    <p class="text-xl md:text-2xl text-ink-300 font-light">AI 개인화 동화책 — 사업 전략 · 기술 · 재무 계획</p>
+    <div class="mt-8 flex justify-center gap-3 flex-wrap">
+      <span class="bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full text-sm font-medium">건당 이익 52.5%</span>
+      <span class="bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full text-sm font-medium">BEP 월 225권</span>
+      <span class="bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full text-sm font-medium">1인 + AI 운영</span>
+    </div>
+  </div>
+</header>
+
+<!-- 네비게이션 (목차) -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-ink-100 no-print">
+  <div class="max-w-4xl mx-auto px-6 py-3 overflow-x-auto">
+    <div class="flex gap-4 text-sm font-medium text-ink-500 whitespace-nowrap">
+      <a href="#section-1" class="hover:text-brand-600 transition">사업개요</a>
+      <a href="#section-2" class="hover:text-brand-600 transition">인력구성</a>
+      <a href="#section-3" class="hover:text-brand-600 transition">JD</a>
+      <a href="#section-4" class="hover:text-brand-600 transition">AI로드맵</a>
+      <a href="#section-5" class="hover:text-brand-600 transition">재무계획</a>
+      <a href="#section-6" class="hover:text-brand-600 transition">경쟁우위</a>
+      <a href="#section-7" class="hover:text-brand-600 transition">기술개요</a>
+      <a href="#section-8" class="hover:text-brand-600 transition">테마확장</a>
+      <a href="#section-9" class="hover:text-brand-600 transition">개인정보</a>
+      <a href="#section-10" class="hover:text-brand-600 transition">마일스톤</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 본문 -->
+<main class="max-w-4xl mx-auto px-6 py-12">
+  <article class="prose">
+    <h1>몽비스토리 사업 계획서</h1>
+<h2>AI 개인화 동화책 — 사업 전략, 기술, 재무 계획</h2>
+<hr />
+<h2>1. 사업 개요</h2>
+<p><strong>핵심 가치:</strong> 정신의학 × 개인화 동화책. 재미, 감동, 부모-아이 상호작용 개선을 동시에 달성하는 세계 유일의 제품.</p>
+<p><strong>제품:</strong> 아이 사진을 AI가 분석하여 동화책 장면에 합성하는 개인화 동화책</p>
+<p><strong>가격 구조:</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>금액</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평균 판매가</td>
+<td>55,000원</td>
+<td>이전 88,000원 대비 대중화 전략 가격</td>
+</tr>
+<tr>
+<td>변동비 합계</td>
+<td>26,150원</td>
+<td>인쇄 2만 + 배송 3천 + 결제수수료 1,650 + 포장 1천 + GPU 500</td>
+</tr>
+<tr>
+<td><strong>건당 이익</strong></td>
+<td><strong>28,850원</strong></td>
+<td><strong>이익률 52.5%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>1권을 팔 때마다 28,850원이 남는다. 이 숫자가 이 사업의 핵심이다. 고정비(서버, 마케팅 등)를 빼기 전 순수하게 한 권당 들어오는 돈이다. 상세 비용 구조는 5.1절 참조.</p>
+<h3>창업 철학: 현금흐름 우선</h3>
+<p>이전에 총 투자금 약 8억원을 소진하고, 직원 11명에 월 인건비 5,000만원 이상을 운영한 경험이 있다. 그 경험에서 배운 것은 명확하다: <strong>사람을 먼저 뽑고 매출을 만드는 구조는 틀렸다. 매출이 먼저고, 사람은 매출이 정당화할 때 뽑는다.</strong></p>
+<p>이번에는 다르게 간다.</p>
+<ol>
+<li>
+<p><strong>1인 + AI 자동화로 시작한다.</strong> 제품 설계(정신의학), 기술 개발(AI 파이프라인), 운영 자동화를 대표 혼자 + AI 도구로 해결한다. 2026년 현재 AI 코딩 어시스턴트, AI 이미지 생성, AI 고객 응대가 실무 수준에 도달했다. 11명이 하던 일을 1명 + AI가 할 수 있는 시대다.</p>
+</li>
+<li>
+<p><strong>첫 달부터 흑자를 만든다.</strong> 고정비를 극단적으로 낮추면 월 225권만 팔아도 손익분기다. 1,000권이면 월 2,000만원 이상의 영업이익이 나온다. J커브를 그리며 적자를 감내하는 게 아니라, 첫 달부터 현금이 쌓이는 구조.</p>
+</li>
+<li>
+<p><strong>채용은 매출이 증명한 후에 한다.</strong> 월 3,000권을 넘기고, 물리적으로 혼자 처리할 수 없는 병목이 생겼을 때 첫 번째 직원을 뽑는다. 그 사람의 급여는 이미 만들어진 현금흐름에서 나온다.</p>
+</li>
+<li>
+<p><strong>투자는 필요 없다. 선택이다.</strong> 현재 수억원의 현금을 보유하고 있어 런칭 자금은 충분하다. 50~100억원 이하의 투자는 받을 이유가 없다. 투자를 받는다면, 이미 검증된 유닛 이코노믹스를 폭발적으로 스케일하기 위해서만.</p>
+</li>
+</ol>
+<h3>왜 이 제품은 나만 만들 수 있는가</h3>
+<p>2019년부터 지금까지 7년. 수천 권의 동화책을 직접 만들었다. 고객에게 사진을 받고, 배경을 제거하고, 장면에 배치하고, 텍스트를 넣고, 인쇄 파일을 만들어 인쇄소에 넘기는 전 과정을 손으로 했다. 수천 장의 아이 사진을 직접 다뤄본 사람만이 아는 것들이 있다 — 어떤 사진이 인쇄에서 깨지는지, 어떤 포즈가 장면에 자연스럽게 들어가는지, 부모가 어떤 순간에 감동하고 어떤 순간에 실망하는지.</p>
+<p>그리고 그 제품을 설계한 것도 나다. 소아정신의학을 공부한 사람이 동화책의 매 페이지를 설계했다. 아이가 자기 이름을 발견하는 순간의 놀라움, 부모가 읽어줄 때 자연스럽게 일어나는 대화, 반복해서 읽을수록 아이에게 스며드는 메시지 — 이것은 마케팅 카피가 아니라 설계 원리다.</p>
+<p>그리고 그것을 자동화하는 코드를 짠 것도 나다. AI 배경 제거 모델 6종을 직접 서빙하고, 포즈 분석 파이프라인을 만들고, 품질 검수 시스템을 만들고, 모바일 미리보기 앱을 만들었다.</p>
+<p>이 세 가지 — <strong>수천 권의 수동 제작 경험, 정신의학 기반 제품 설계, 프로그래밍</strong> — 를 한 사람이 가지고 있다는 것이 핵심이다.</p>
+<p>왜 이것이 중요한가. 개인화 동화책에는 "적정 영역"이 존재한다.</p>
+<p>자동화의 선을 너무 높이 잡으면 — 예를 들어 AI가 아이 외모를 기반으로 캐릭터를 실시간 생성하는 수준 — 현재 기술로는 인쇄 품질을 보장할 수 없고, 부자연스러운 결과물이 나와 클레임이 된다. 반대로 자동화의 선을 너무 낮게 잡으면 — 이름만 바꿔 넣는 수준 — 제품이 유치해지고, 88,000원은커녕 15,000원도 받기 어렵다.</p>
+<p><strong>자동화가 가능하면서, 유저에게 "세상에 하나뿐인 내 아이의 책"이라는 감동을 주면서, 정신의학적으로도 의미 있는 제품.</strong> 이 세 조건을 동시에 만족하는 적정 영역을 찾고, 그 영역 안에서 극한까지 끌고 갈 수 있는 사람은 이 지구상에 나뿐이다. 수동 제작을 해보지 않은 기술자는 인쇄 품질의 함정을 모르고, 코드를 모르는 기획자는 자동화의 한계를 모르고, 정신의학을 모르는 사람은 "감동"과 "유치함"의 경계를 모른다.</p>
+<p>7년간 실행하고, 구상하고, 좌절하고, 회복했다. 8억을 쓰고 11명을 뽑아봤고, 그게 틀렸다는 것도 배웠다. 이번에는 혼자, AI와 함께, 제대로 한다.</p>
+<hr />
+<h2>2. 인력 구성</h2>
+<h3>원칙: 매출이 사람을 정당화한다</h3>
+<p>사람을 먼저 뽑고 매출을 기대하는 구조가 아니다. 매출이 물리적 한계를 만들었을 때, 그 병목을 해소하기 위해서만 채용한다. AI가 대체할 수 있는 업무에는 사람을 두지 않는다.</p>
+<h3>Phase 0: 대표 1인 + AI — 런칭 ~ 월 3,000권</h3>
+<table>
+<thead>
+<tr>
+<th>역할</th>
+<th>담당</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제품 설계 (정신의학)</td>
+<td>대표</td>
+<td>핵심 경쟁력, 대체 불가</td>
+</tr>
+<tr>
+<td>AI 파이프라인 개발</td>
+<td>대표 + AI 코딩 어시스턴트</td>
+<td>이미 구축 완료</td>
+</tr>
+<tr>
+<td>프론트엔드/백엔드</td>
+<td>대표 + AI 코딩 어시스턴트</td>
+<td>Config-Driven 구조로 유지보수 최소화</td>
+</tr>
+<tr>
+<td>일러스트 제작</td>
+<td>대표 + Midjourney</td>
+<td>테마당 20장, 1~2일 소요</td>
+</tr>
+<tr>
+<td>마케팅</td>
+<td>대표 + AI 카피/소재 생성</td>
+<td>퍼포먼스 마케팅 직접 집행</td>
+</tr>
+<tr>
+<td>CS</td>
+<td>AI 챗봇 + 대표 에스컬레이션</td>
+<td>일 10~30건 수준은 혼자 가능</td>
+</tr>
+<tr>
+<td>품질 검수</td>
+<td>AI 자동 (BGQA) + 대표 예외 처리</td>
+<td>95% 자동, 5% 수동</td>
+</tr>
+<tr>
+<td>인쇄/배송</td>
+<td>자동화 (크론잡 + 북토리 API)</td>
+<td>이미 자동화 구축됨</td>
+</tr>
+</tbody>
+</table>
+<p><strong>월 고정비: 약 650만원</strong> (인건비 0원 — 대표는 현금흐름으로 생활)</p>
+<p>이 구조에서 월 1,000권이면 월 영업이익 2,200만원 이상. 3,000권이면 7,000만원 이상. 흑자가 아니라 <strong>고수익</strong>이 첫 달부터 나온다.</p>
+<h3>Phase 1: 대표 + 운영 1명 — 월 3,000~10,000권</h3>
+<p>월 3,000권을 넘기면 물리적 병목이 생긴다: CS 에스컬레이션(일 50건+), 품질 예외 처리(일 25건+), 인쇄 이슈 대응. 이때 첫 번째 채용.</p>
+<table>
+<thead>
+<tr>
+<th>역할</th>
+<th>담당</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제품 + 기술 + 마케팅</td>
+<td>대표</td>
+<td>변동 없음</td>
+</tr>
+<tr>
+<td>운영/CS</td>
+<td>운영 매니저 1명 (연봉 4,000만원)</td>
+<td>주문-검수-배송-CS 통합 담당</td>
+</tr>
+</tbody>
+</table>
+<p><strong>월 고정비: 약 1,500만원</strong> (운영 매니저 인건비 + 4대보험 포함)</p>
+<h3>Phase 2: 스케일업 — 월 10,000권 이상 (매출이 정당화할 때만)</h3>
+<p>월 10,000권 = 월 매출 5.5억, 월 영업이익 2.7억 이상. 이 수준에서 비로소 조직을 키울 이유가 생긴다. 하지만 여전히 "필요한 만큼만" 원칙.</p>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>직군</th>
+<th>채용 트리거</th>
+<th>연봉(만원)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>COO / 비즈니스 매니저</td>
+<td>대표가 제품 개발에 집중 못할 때</td>
+<td>7,500</td>
+</tr>
+<tr>
+<td>2</td>
+<td>마케팅 매니저</td>
+<td>월 광고비 3,000만원 이상, 직접 관리 한계</td>
+<td>5,500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CS 전담</td>
+<td>일 에스컬레이션 100건 이상</td>
+<td>3,600</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CTO</td>
+<td>기술 부채 해소 + 신규 R&amp;D 동시 필요 시</td>
+<td>8,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심: Phase 2 시점에서 회사는 이미 연 30억 이상의 영업이익을 내고 있다.</strong> 채용은 "생존을 위한 투자"가 아니라 "더 큰 수익을 위한 선택"이다.</p>
+<hr />
+<h2>3. 채용 — Job Descriptions</h2>
+<blockquote>
+<p>아래 JD는 Phase 1~2에서 매출이 채용을 정당화할 때 사용한다. 지금 당장의 채용 계획이 아니라, 각 포지션이 필요해지는 시점에 즉시 실행할 수 있도록 미리 설계해둔 것이다.</p>
+</blockquote>
+<p>우리는 정신의학을 개인화 동화책에 녹여, 부모와 아이 사이에 진짜 대화가 일어나게 만드는 회사입니다. 권당 8만 8천원에도 팔렸던 제품입니다. 기술로 가격을 절반 이하로 낮추고, 월 수만 명의 가정에 도달하려 합니다.</p>
+<hr />
+<h3>1. COO / 비즈니스 매니저 (Phase 2 — 대표가 제품에 집중 못할 때)</h3>
+<p><strong>이 포지션이 존재하는 이유</strong></p>
+<p>우리 대표는 소아정신의학 관점에서 동화책을 설계하는 사람입니다. 이 사람이 재무제표를 보고, 세무사와 통화하고, 인쇄사 단가를 협상하는 시간은 회사에 손해입니다. 당신이 오면 대표는 제품 개발에만 집중하게 됩니다. 나머지 모든 것은 당신이 가져갑니다.</p>
+<p><strong>당신이 할 일</strong></p>
+<p>당신은 제품 개발을 제외한 회사의 모든 운영을 총괄합니다.</p>
+<p><strong>재무와 숫자.</strong> 월 매출 5억 이상의 현금흐름을 관리합니다. 원가 구조를 꿰뚫고 있어야 합니다. 인쇄 단가 20,000원, 포장배송 3,000원, PG수수료 3%, 광고비 비중 — 이 숫자들이 1%씩 움직일 때 영업이익에 어떤 영향을 주는지 즉시 판단할 수 있어야 합니다. 세무회계는 외부 전문가를 쓰되, 그들에게 정확한 질문을 던지는 것은 당신의 몫입니다.</p>
+<p><strong>파트너십과 협상.</strong> 인쇄사(북토리)와의 관계가 핵심입니다. 월 1만권이 3만권이 되었을 때 단가를 어떻게 가져갈지, 납기가 밀릴 때 백업 인쇄사는 어디인지, 이런 판단을 내려야 합니다. Cafe24, 아임포트, 알리고, SweetTracker 등 외부 서비스와의 계약 관리도 당신의 영역입니다.</p>
+<p><strong>B2B 영업.</strong> 어린이집 졸업앨범, 소아과 대기실 비치, 기업 복지몰 입점 — 이런 채널을 직접 개척합니다. 권당 8만 8천원에도 개인 고객이 구매한 제품입니다. B2B에서는 볼륨 할인을 줘도 충분한 마진이 남습니다. 이 채널이 전체 매출의 20~30%가 되도록 만드는 것이 1년 내 목표입니다.</p>
+<p><strong>투자 대응.</strong> 우리는 소액 투자를 구하지 않습니다. 하지만 유닛 이코노믹스가 검증된 후 50~100억 규모의 스케일업 투자를 받을 때, IR 자료를 만들고 초기 미팅을 진행하는 것은 당신의 몫입니다. 대표는 최종 미팅에만 참석합니다.</p>
+<p><strong>조직.</strong> 5명 이하의 극도로 작은 조직이지만, 각자가 자기 영역에서 독립적으로 움직여야 합니다. 채용, 온보딩, 성과 관리의 기본 체계를 만듭니다. 대표에게 "이 사람을 뽑아야 합니다"라고 제안하는 것도, "이 프로세스가 병목입니다"라고 보고하는 것도 당신의 역할입니다.</p>
+<p><strong>방패.</strong> 대표에게 올라오는 모든 잡무, 긴급하지만 중요하지 않은 일, 외부의 불필요한 미팅 요청을 차단합니다. 대표의 캘린더에 "제품 개발"만 남아있게 만드는 것이 당신의 가장 중요한 KPI입니다.</p>
+<p><strong>당신에게 필요한 것</strong></p>
+<ul>
+<li>스타트업 또는 커머스 비즈니스에서 운영/경영기획 경험 3년 이상</li>
+<li>P&amp;L을 직접 관리해본 경험. 매출이 아니라 영업이익으로 사고하는 습관</li>
+<li>협상 경험. 공급사, 유통사, 또는 투자자와 테이블에 앉아본 적이 있을 것</li>
+<li>스프레드시트와 숫자에 강할 것. 대시보드를 직접 만들 수 있으면 더 좋음</li>
+<li>"대표가 신경 쓰지 않아도 되게 만드는 것"에서 보람을 느끼는 성향</li>
+<li>완벽한 시스템보다 빠른 실행을 선호할 것. 당신이 합류할 때 회사는 이미 월 수천만원의 이익을 내고 있습니다</li>
+</ul>
+<p><strong>필요하지 않은 것</strong></p>
+<ul>
+<li>대기업 전략기획 경험 (우리에겐 실행이 필요합니다)</li>
+<li>동화책/출판 업계 경험 (있으면 좋지만, 없어도 됩니다)</li>
+</ul>
+<hr />
+<h3>2. CTO (Phase 2 — 기술 부채 해소 + R&amp;D 동시 필요 시)</h3>
+<p><strong>이 포지션이 존재하는 이유</strong></p>
+<p>고객이 아이 사진을 업로드하면, AI가 배경을 제거하고, 포즈를 분석하고, 20페이지 동화책에 자동으로 배치하고, 부모에게 미리보기를 보여주고, 승인되면 인쇄 파일을 생성하여 인쇄사에 자동 발주합니다. 이 전체 파이프라인이 현재 작동하고 있습니다. 당신은 이것을 인수받아 월 1만건, 그 다음 5만건까지 스케일하는 사람입니다.</p>
+<p><strong>당신이 할 일</strong></p>
+<p><strong>AI 파이프라인.</strong> 현재 시스템은 Python FastAPI 서버에서 배경 제거(ben2, hr-matting)와 포즈 감지(BlazePose, face-api.js)를 수행합니다. RTX 4070 Super 1장으로 돌아가고 있습니다. 월 1만건은 GPU 2~4장이면 충분하지만, 3만건을 넘어가면 아키텍처를 다시 생각해야 합니다. 로컬 GPU와 클라우드 GPU를 어떻게 조합할지, 배치 처리와 실시간 처리를 어떻게 분리할지, 이런 결정을 내립니다.</p>
+<p><strong>프론트엔드.</strong> 부모가 사용하는 미리보기 앱(book-preview)은 Vanilla JS로 작성되어 있습니다. 모바일 사파리에서 매끄럽게 동작해야 합니다. HEIC 변환, 터치 드래그, 캐러셀 애니메이션, 폴라로이드 앨범 레이아웃 등 이미 복잡한 기능이 들어가 있습니다. 첫 번째 테마(NAME)는 config 기반으로 작동하고 있지만, 모든 테마를 config만으로 생성할 수 있는 범용 구조는 아직 완성되지 않았습니다. 당신은 이 구조를 범용화하고 고도화합니다.</p>
+<p><strong>자동화.</strong> 현재 수동인 단계를 없앱니다. Cafe24에서 주문이 들어오면 → 고객에게 사진 업로드 알림톡 발송 → 사진 수신 → AI 처리 → 미리보기 생성 → 고객 승인 → 인쇄 파일 생성 → 북토리 API 자동 발주 → 배송 추적 연동. 이 체인에서 사람의 개입이 0에 가까워야 합니다.</p>
+<p><strong>품질 자동 검수.</strong> 인쇄 사고는 절대 일어나면 안 됩니다. 얼굴이 잘리거나, 해상도가 부족하거나, 이상한 사진이 동화책에 들어가면 클레임이 됩니다. 현재 pre-flight check 시스템이 있지만, 정확도를 99% 이상으로 올려서 수동 검수를 거의 제거하는 것이 목표입니다.</p>
+<p><strong>인프라와 보안.</strong> 아이 사진은 민감한 개인정보입니다. 처리 후 즉시 삭제되는 파이프라인, 전송 구간 암호화, 접근 로그 관리가 필요합니다. 현재 Cloudflare Tunnel로 서버를 노출하고 있는 구조도 장기적으로는 재설계가 필요합니다.</p>
+<p><strong>대표와의 협업.</strong> 대표가 새로운 동화책 테마를 설계하면, 당신은 그것을 config 파일 하나로 시스템에 올릴 수 있는 구조를 만들어야 합니다. "새 스토리 20페이지, 일러스트 20장, 텍스트 A/B 버전" — 이것만 넘기면 바로 프로덕션에 올라가야 합니다.</p>
+<p><strong>당신에게 필요한 것</strong></p>
+<ul>
+<li>Python 백엔드 실무 경험 3년 이상 (FastAPI/Flask/Django)</li>
+<li>프론트엔드 개발 능력 (JS/HTML/CSS — React 없이도 복잡한 UI를 만들 수 있을 것)</li>
+<li>GPU 서버 운영 경험 (CUDA, 모델 서빙, 배치 처리)</li>
+<li>AI/ML 모델을 직접 학습시키지는 않아도 되지만, 오픈소스 모델을 평가하고 서빙하고 파인튜닝 지시를 내릴 수 있을 것</li>
+<li>API 설계와 시스템 통합 경험 (외부 서비스 5개 이상이 엮인 구조를 다뤄본 적 있을 것)</li>
+<li>"혼자 다 하는" 것에 익숙한 풀스택. 우리에게 지금 필요한 건 스페셜리스트가 아니라 제너럴리스트입니다</li>
+<li>장애 대응 — 새벽에 서버가 죽으면 당신이 일어나야 합니다. 이것이 불편하면 이 자리는 맞지 않습니다</li>
+</ul>
+<p><strong>필요하지 않은 것</strong></p>
+<ul>
+<li>대규모 팀 매니지먼트 경험 (처음엔 혼자, 나중에 1~2명 리딩)</li>
+<li>논문 쓸 수준의 ML 역량 (우리는 모델을 만드는 회사가 아니라 사용하는 회사입니다)</li>
+</ul>
+<hr />
+<h3>3. 운영/CS 매니저 (Phase 1 — 첫 번째 채용, 월 3,000권 초과 시)</h3>
+<p><strong>이 포지션이 존재하는 이유</strong></p>
+<p>기술이 아무리 좋아도, 고객이 "사진을 잘못 올렸어요", "아이 이름 철자가 틀렸어요", "언제 배송되나요"라고 물었을 때 빠르고 따뜻하게 응대하지 못하면 브랜드가 망가집니다. 아이를 위한 선물을 주문한 부모는 일반 쇼핑몰 고객보다 감정적 기대치가 높습니다. 당신은 이 기대를 충족시키는 동시에, 하루 100~300건의 주문이 막힘 없이 흘러가게 만드는 사람입니다.</p>
+<p><strong>당신이 할 일</strong></p>
+<p><strong>일일 생산 관리.</strong> 매일 아침 대시보드를 열어 전날 주문 상태를 확인합니다. 사진 미수신, AI 처리 실패, 고객 미승인, 인쇄 지연 — 각 단계에서 멈춰있는 건을 찾아내고 해결합니다. D+3 출고라는 SLA를 지키는 것이 당신의 핵심 지표입니다. 단 1건이라도 7일 넘게 지연되면, 왜 그런지 원인을 파악하고 재발을 막아야 합니다.</p>
+<p><strong>품질 검수.</strong> AI가 자동으로 처리한 동화책 중 약 5~10%는 "사람이 한번 봐야 할 것 같다"는 플래그가 뜹니다. 아이 얼굴이 가려진 사진, 해상도가 애매한 사진, 두 명이 찍힌 사진에서 주인공을 잘못 잡은 경우 등. 하루 25~50건 정도를 빠르게 판단하여 통과시키거나, 고객에게 사진 재업로드를 요청합니다. 이 판단이 느리면 전체 파이프라인이 밀립니다.</p>
+<p><strong>고객 응대.</strong> 카카오톡 채널, Cafe24 게시판, 전화로 들어오는 문의에 대응합니다. AI 챗봇이 배송 조회, FAQ 같은 단순 문의를 1차로 처리하지만, "사진을 바꾸고 싶어요", "이름 한자가 틀렸어요", "선물 포장 가능한가요" 같은 문의는 사람이 해야 합니다. 일 50~100건 정도의 에스컬레이션을 예상합니다. 핵심은 속도와 톤입니다. 부모는 아이를 위한 특별한 선물을 기다리고 있다는 것을 항상 기억해야 합니다.</p>
+<p><strong>클레임과 재제작.</strong> 인쇄 불량, 오탈자, 사진 품질 불만 등으로 재제작이 필요한 경우가 있습니다. 전체의 1~2% 정도지만, 이 고객들의 경험이 가장 중요합니다. 무조건 재제작을 해주되, 원인을 기록하여 대표에게 피드백합니다. 같은 원인의 클레임이 반복되면 시스템을 고쳐야 하니까요.</p>
+<p><strong>VOC 수집.</strong> 고객이 "이런 테마도 있으면 좋겠어요", "읽어주기 가이드가 너무 좋았어요", "글자가 좀 작은 것 같아요"라고 말할 때, 이것을 체계적으로 기록하여 주간 리포트로 만듭니다. 대표가 다음 제품을 설계할 때 가장 먼저 보는 자료가 이것입니다.</p>
+<p><strong>당신에게 필요한 것</strong></p>
+<ul>
+<li>커머스 또는 서비스 운영/CS 경험 2년 이상</li>
+<li>하루 50건 이상의 문의를 처리해본 경험. 멀티태스킹에 강할 것</li>
+<li>엑셀/시트로 데이터를 정리하고 패턴을 찾아낼 수 있을 것</li>
+<li>감정적인 고객에게도 차분하고 따뜻하게 대응할 수 있는 사람</li>
+<li>"이 문제가 왜 생겼지?"를 파고드는 성향. 같은 문제가 두 번 일어나는 것을 참지 못하는 사람</li>
+<li>AI 도구(챗봇, 자동화)를 두려워하지 않고 적극적으로 활용하려는 태도</li>
+</ul>
+<p><strong>필요하지 않은 것</strong></p>
+<ul>
+<li>콜센터 대규모 운영 경험 (우리는 소규모 고품질 CS입니다)</li>
+<li>개발 능력 (하지만 어드민 대시보드를 능숙하게 사용할 수 있어야 합니다)</li>
+</ul>
+<hr />
+<h3>4. 마케팅 매니저 (Phase 2 — 월 광고비 3,000만원 이상 시)</h3>
+<p><strong>이 포지션이 존재하는 이유</strong></p>
+<p>이 제품은 권당 8만 8천원에도 팔렸습니다. 아이 사진과 이름이 들어간 세상에 하나뿐인 동화책이라는 가치를 부모가 이해하는 순간, 구매 전환은 높습니다. 문제는 그 순간을 만드는 것입니다. 당신은 "정신의학 기반 개인화 동화책"이라는, 시장에 없던 카테고리를 부모들의 머릿속에 만드는 사람입니다.</p>
+<p><strong>당신이 할 일</strong></p>
+<p><strong>포지셔닝 설계.</strong> 우리는 "이름이 들어간 동화책"이 아닙니다. "아동 심리 전문가가 설계한, 부모-아이 상호작용을 만드는 동화책"입니다. 이 차이를 3초 안에 전달할 수 있는 메시지를 만들어야 합니다. 기존 커스텀 동화책 시장과 우리를 명확하게 구분하는 브랜딩이 필요합니다.</p>
+<p><strong>퍼포먼스 마케팅.</strong> 메타(인스타그램/페이스북), 네이버 검색광고, 카카오모먼트를 집행합니다. 월 광고비는 매출의 10~15% 수준에서 시작하여, ROAS를 보며 조정합니다. 당신이 합류하는 시점에는 대표가 이미 ROAS가 검증된 채널을 만들어놓은 상태입니다. 0~4세 자녀를 둔 부모, 돌잔치 준비 중인 부모, 출산 선물을 찾는 사람 — 타겟 세그먼트별로 다른 소재와 메시지를 운영합니다. A/B 테스트를 멈추지 않습니다.</p>
+<p><strong>콘텐츠 마케팅.</strong> 맘카페(맘스홀릭, 레몬테라스 등)에서 자연스러운 체험 후기가 퍼지게 만드는 것이 가장 강력한 채널입니다. 체험단을 월 50~100명 규모로 운영하고, 진짜 후기를 받아 2차 콘텐츠로 가공합니다. 인스타그램에서는 "아이가 자기 이름이 나오는 책을 보고 놀라는 영상"이 바이럴 소재입니다. 이런 순간을 포착하는 감각이 있어야 합니다.</p>
+<p><strong>전문가 마케팅.</strong> 대표가 설계한 정신의학적 근거를 마케팅 자산으로 전환합니다. 소아정신과 전문의의 추천사, 아동심리상담사의 리뷰, 육아 인플루언서와의 협업 — "전문가가 인정한 동화책"이라는 신뢰를 쌓습니다. 이것은 단순 체험단과는 다른 차원의 마케팅입니다.</p>
+<p><strong>CRM.</strong> 한 번 구매한 고객이 다시 사게 만듭니다. 아이는 자라니까요. 돌에 "이름 동화"를 산 부모에게 3세에 "감정 동화"를, 5세에 "관계 동화"를 제안합니다. 출산 예정일, 아이 생일 기반 자동 리마인드를 설계합니다. 형제가 있는 가정에는 "둘째 동화책"을 추천합니다.</p>
+<p><strong>데이터.</strong> CAC(고객획득비용), LTV(고객생애가치), 전환율, 재구매율, ROAS — 이 숫자들을 매일 봅니다. "감으로 하는 마케팅"은 우리에게 없습니다. 어떤 채널에서, 어떤 메시지로, 어떤 타겟에게 접근했을 때 전환이 일어나는지를 데이터로 증명하고, 그 채널에 돈을 집중합니다.</p>
+<p><strong>당신에게 필요한 것</strong></p>
+<ul>
+<li>퍼포먼스 마케팅 실무 경험 3년 이상 (메타, 네이버 필수)</li>
+<li>월 3,000만원 이상의 광고비를 직접 집행하고 ROAS를 관리해본 경험</li>
+<li>육아/키즈 시장에 대한 이해 또는 관심. 0~8세 자녀를 둔 부모의 구매 심리를 아는 사람</li>
+<li>콘텐츠 감각. 카피 한 줄, 썸네일 한 장이 전환율을 바꾼다는 것을 경험으로 아는 사람</li>
+<li>GA4, 메타 픽셀, 네이버 전환 추적 등 데이터 트래킹 설정을 직접 할 수 있을 것</li>
+<li>AI 도구를 활용한 콘텐츠 제작에 거리낌이 없을 것 (카피라이팅, 이미지, 영상 편집)</li>
+</ul>
+<p><strong>필요하지 않은 것</strong></p>
+<ul>
+<li>브랜드 마케팅만 해본 사람 (우리는 퍼포먼스와 브랜딩을 동시에 해야 합니다)</li>
+<li>대행사 경험만 있는 사람 (인하우스에서 P&amp;L 책임을 져본 경험이 중요합니다)</li>
+</ul>
+<hr />
+<h3>대규모 스케일 시 추가 가능 포지션</h3>
+<blockquote>
+<p>아래 포지션은 월 30,000권 이상, 해외 진출 등 현재 계획의 범위를 넘어서는 스케일에서만 고려한다. 당분간 필요 없음.</p>
+</blockquote>
+<h4>5. 풀스택 개발자</h4>
+<p>CTO의 백업이자 실행 파트너. 매일의 기능 개발과 버그 수정을 담당. Python + JavaScript 풀스택이어야 하며, "혼자서 기능 하나를 처음부터 끝까지 배포할 수 있는" 수준이 필요.</p>
+<h4>6. 크리에이티브 프로듀서</h4>
+<p>AI 이미지 생성(Midjourney)으로 동화책 일러스트를 제작. 현재 대표가 직접 하고 있는 영역. 테마가 10종 이상으로 늘어나고 월 2~3종의 신규 테마를 동시 제작해야 할 때 필요.</p>
+<h4>7. CS 전담</h4>
+<p>운영 매니저에게서 CS 업무를 분리. 월 3만건이 되면 일 에스컬레이션 150~300건. AI 챗봇 시나리오 개선, VOC 분류 및 주간 리포트.</p>
+<h4>8. 비즈니스 개발 (BD)</h4>
+<p>B2B 영업과 해외 파트너십 전담. 어린이집, 소아과, 기업 복지몰, 해외 현지 인쇄/물류.</p>
+<hr />
+<h3>채용 타임라인 요약</h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>트리거</th>
+<th>채용</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0 (1인)</strong></td>
+<td>런칭</td>
+<td>없음</td>
+<td>대표 + AI로 전부</td>
+</tr>
+<tr>
+<td><strong>1 (2인)</strong></td>
+<td>월 3,000권 초과</td>
+<td>운영/CS 매니저</td>
+<td>첫 번째이자 유일한 채용 (당분간)</td>
+</tr>
+<tr>
+<td><strong>2 (4~5인)</strong></td>
+<td>월 10,000권 초과</td>
+<td>COO, 마케팅, CS, CTO</td>
+<td>매출이 정당화할 때만, 순차적</td>
+</tr>
+<tr>
+<td><strong>3 이상</strong></td>
+<td>월 30,000권 초과</td>
+<td>풀스택, BD 등</td>
+<td>대규모 스케일 시</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. AI 자동화 로드맵</h2>
+<h3>현재 상태 — 자동화 90% 달성</h3>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>상태</th>
+<th>상세</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배경 제거</td>
+<td>✅ 완료</td>
+<td>6개 AI 모델, RTX GPU 자동 처리</td>
+</tr>
+<tr>
+<td>포즈 분석</td>
+<td>✅ 완료</td>
+<td>ViTPose 17개 관절, 스마트 크롭</td>
+</tr>
+<tr>
+<td>품질 검수</td>
+<td>✅ 완료</td>
+<td>BGQA 8개 항목 자동 판정</td>
+</tr>
+<tr>
+<td>인쇄 발주</td>
+<td>✅ 완료</td>
+<td>크론잡으로 북토리 자동 발주</td>
+</tr>
+<tr>
+<td>고객 알림</td>
+<td>✅ 완료</td>
+<td>상태 변경 시 자동 알림톡</td>
+</tr>
+<tr>
+<td>배송 추적</td>
+<td>✅ 완료</td>
+<td>SweetTracker 자동 연동</td>
+</tr>
+</tbody>
+</table>
+<h3>런칭까지 남은 것 (~1개월)</h3>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>백엔드 통합</td>
+<td>Firebase ↔ AI 서버 자동 연결</td>
+</tr>
+<tr>
+<td>인쇄 파일 생성</td>
+<td>미리보기 → 300DPI PDF 자동 변환</td>
+</tr>
+<tr>
+<td>상태 전이 자동화</td>
+<td>수동 5단계 → 자동 1단계 축소</td>
+</tr>
+</tbody>
+</table>
+<h3>6개월 ~ 1년 (자동화 98% + 확장)</h3>
+<ul>
+<li>BGQA 검수 정확도 99% 이상 → 수동 검수 거의 제거</li>
+<li>동적 일러스트 생성 (아이 외모에 맞춘 캐릭터 자동 생성)</li>
+<li>다국어 자동 번역 → 해외 시장 진출 기반</li>
+</ul>
+<h3>1년 ~ 2년 (플랫폼화)</h3>
+<ul>
+<li>사용자가 직접 테마/스토리 선택하는 셀프서비스 플랫폼</li>
+<li>API 제공 → 타 플랫폼 연동 (사진관, 키즈카페 등)</li>
+<li>구독 모델 도입 (월 1권 자동 발송)</li>
+</ul>
+<hr />
+<h2>5. 재무 계획</h2>
+<h3>5.1 단가 구조</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>금액</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>평균 판매가</strong></td>
+<td><strong>55,000원</strong></td>
+<td>이전 88,000원 대비 37.5% 인하</td>
+</tr>
+<tr>
+<td>인쇄 원가</td>
+<td>20,000원</td>
+<td>북토리 하드커버 풀컬러 20페이지 기준</td>
+</tr>
+<tr>
+<td>배송비</td>
+<td>3,000원</td>
+<td>택배비 (CJ/한진)</td>
+</tr>
+<tr>
+<td>결제 수수료</td>
+<td>1,650원</td>
+<td>카드결제 3%</td>
+</tr>
+<tr>
+<td>포장/부자재</td>
+<td>1,000원</td>
+<td>박스, 완충재, 스티커</td>
+</tr>
+<tr>
+<td>GPU/클라우드</td>
+<td>500원</td>
+<td>건당 AI 처리 비용</td>
+</tr>
+<tr>
+<td><strong>변동비 합계</strong></td>
+<td><strong>26,150원</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>건당 이익</strong></td>
+<td><strong>28,850원</strong></td>
+<td><strong>이익률 52.5%</strong> (판매가 − 변동비)</td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 고정비 (월간)</h3>
+<h4>Phase 0: 대표 1인 + AI (런칭 ~ 월 3,000권)</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>월 비용(만원)</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인건비</td>
+<td>0</td>
+<td>대표 — 보유 현금으로 생활</td>
+</tr>
+<tr>
+<td>GPU 서버</td>
+<td>50</td>
+<td>자체 보유 RTX 서버 전기/네트워크</td>
+</tr>
+<tr>
+<td>클라우드/인프라</td>
+<td>30</td>
+<td>Firebase, Cloudflare, 도메인</td>
+</tr>
+<tr>
+<td>SaaS/도구</td>
+<td>20</td>
+<td>Midjourney, AI 어시스턴트 등</td>
+</tr>
+<tr>
+<td>마케팅비</td>
+<td>500</td>
+<td>퍼포먼스 마케팅 (매출 연동 확대)</td>
+</tr>
+<tr>
+<td>기타</td>
+<td>50</td>
+<td>회계/세무, 통신비</td>
+</tr>
+<tr>
+<td><strong>고정비 합계</strong></td>
+<td><strong>650</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Phase 1: 대표 + 운영 1명 (월 3,000~10,000권)</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>월 비용(만원)</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인건비</td>
+<td>333</td>
+<td>운영매니저 1명 (연봉 4,000만원)</td>
+</tr>
+<tr>
+<td>4대보험/퇴직금</td>
+<td>67</td>
+<td>인건비의 약 20%</td>
+</tr>
+<tr>
+<td>GPU 서버</td>
+<td>100</td>
+<td>GPU 1~2장 추가</td>
+</tr>
+<tr>
+<td>클라우드/인프라</td>
+<td>50</td>
+<td></td>
+</tr>
+<tr>
+<td>SaaS/도구</td>
+<td>30</td>
+<td></td>
+</tr>
+<tr>
+<td>마케팅비</td>
+<td>800</td>
+<td>매출 성장에 따라 증가</td>
+</tr>
+<tr>
+<td>기타</td>
+<td>70</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>고정비 합계</strong></td>
+<td><strong>1,450</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Phase 2 참고: 스케일업 (월 10,000권 이상)</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>월 비용(만원)</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인건비</td>
+<td>1,500</td>
+<td>3~4명 (필요 시점에 순차 채용)</td>
+</tr>
+<tr>
+<td>4대보험/퇴직금</td>
+<td>300</td>
+<td></td>
+</tr>
+<tr>
+<td>서버/인프라</td>
+<td>200</td>
+<td>다중 GPU + 클라우드 하이브리드</td>
+</tr>
+<tr>
+<td>사무실</td>
+<td>150</td>
+<td>이 시점에서도 소규모</td>
+</tr>
+<tr>
+<td>마케팅비</td>
+<td>2,000</td>
+<td></td>
+</tr>
+<tr>
+<td>SaaS/도구</td>
+<td>50</td>
+<td></td>
+</tr>
+<tr>
+<td>기타</td>
+<td>100</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>고정비 합계</strong></td>
+<td><strong>4,300</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>5.3 손익분기점 (BEP)</h3>
+<pre><code>BEP = 고정비 ÷ 건당 이익(28,850원)
+
+Phase 0: 650만원 ÷ 2.885만원 = 월 225권
+Phase 1: 1,450만원 ÷ 2.885만원 = 월 503권
+Phase 2: 4,300만원 ÷ 2.885만원 = 월 1,490권
+</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Phase 0 (1인)</th>
+<th>Phase 1 (2인)</th>
+<th>Phase 2 (4~5인)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>손익분기점</strong></td>
+<td><strong>월 225권</strong></td>
+<td><strong>월 503권</strong></td>
+<td><strong>월 1,490권</strong></td>
+</tr>
+<tr>
+<td>목표 판매량</td>
+<td>월 3,000권</td>
+<td>월 10,000권</td>
+<td>월 30,000권</td>
+</tr>
+<tr>
+<td>BEP 대비 여유</td>
+<td>13.3배</td>
+<td>19.9배</td>
+<td>20.1배</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phase 0의 BEP가 월 225권이라는 것은, 하루 8권만 팔면 흑자라는 뜻이다.</strong></p>
+<h3>5.4 월간 손익 시뮬레이션</h3>
+<h4>Phase 0 (1인) — 월 판매량별</h4>
+<table>
+<thead>
+<tr>
+<th>월 판매량</th>
+<th>매출</th>
+<th>변동비</th>
+<th>이익</th>
+<th>고정비</th>
+<th><strong>영업이익</strong></th>
+<th>영업이익률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300권</td>
+<td>1,650</td>
+<td>785</td>
+<td>866</td>
+<td>650</td>
+<td><strong>216</strong></td>
+<td>13.1%</td>
+</tr>
+<tr>
+<td>500권</td>
+<td>2,750</td>
+<td>1,308</td>
+<td>1,443</td>
+<td>650</td>
+<td><strong>793</strong></td>
+<td>28.8%</td>
+</tr>
+<tr>
+<td>1,000권</td>
+<td>5,500</td>
+<td>2,615</td>
+<td>2,885</td>
+<td>650</td>
+<td><strong>2,235</strong></td>
+<td>40.6%</td>
+</tr>
+<tr>
+<td>2,000권</td>
+<td>11,000</td>
+<td>5,230</td>
+<td>5,770</td>
+<td>650</td>
+<td><strong>5,120</strong></td>
+<td>46.5%</td>
+</tr>
+<tr>
+<td><strong>3,000권</strong></td>
+<td><strong>16,500</strong></td>
+<td><strong>7,845</strong></td>
+<td><strong>8,655</strong></td>
+<td><strong>650</strong></td>
+<td><strong>8,005</strong></td>
+<td><strong>48.5%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(단위: 만원)</em></p>
+<p><strong>월 1,000권 = 월 영업이익 2,235만원. 월 3,000권 = 월 영업이익 8,005만원.</strong> 고정비가 극단적으로 낮기 때문에 한 권당 이익(28,850원)의 대부분이 그대로 영업이익이 된다.</p>
+<h4>Phase 1 (2인) — 월 판매량별</h4>
+<table>
+<thead>
+<tr>
+<th>월 판매량</th>
+<th>매출</th>
+<th>변동비</th>
+<th>이익</th>
+<th>고정비</th>
+<th><strong>영업이익</strong></th>
+<th>영업이익률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3,000권</td>
+<td>16,500</td>
+<td>7,845</td>
+<td>8,655</td>
+<td>1,450</td>
+<td><strong>7,205</strong></td>
+<td>43.7%</td>
+</tr>
+<tr>
+<td>5,000권</td>
+<td>27,500</td>
+<td>13,075</td>
+<td>14,425</td>
+<td>1,450</td>
+<td><strong>12,975</strong></td>
+<td>47.2%</td>
+</tr>
+<tr>
+<td>7,000권</td>
+<td>38,500</td>
+<td>18,305</td>
+<td>20,195</td>
+<td>1,450</td>
+<td><strong>18,745</strong></td>
+<td>48.7%</td>
+</tr>
+<tr>
+<td><strong>10,000권</strong></td>
+<td><strong>55,000</strong></td>
+<td><strong>26,150</strong></td>
+<td><strong>28,850</strong></td>
+<td><strong>1,450</strong></td>
+<td><strong>27,400</strong></td>
+<td><strong>49.8%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>(단위: 만원)</em></p>
+<h4>Phase 2 (4~5인) — 월 판매량별</h4>
+<table>
+<thead>
+<tr>
+<th>월 판매량</th>
+<th>매출</th>
+<th>변동비</th>
+<th>이익</th>
+<th>고정비</th>
+<th><strong>영업이익</strong></th>
+<th>영업이익률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10,000권</td>
+<td>55,000</td>
+<td>26,150</td>
+<td>28,850</td>
+<td>4,300</td>
+<td><strong>24,550</strong></td>
+<td>44.6%</td>
+</tr>
+<tr>
+<td>20,000권</td>
+<td>110,000</td>
+<td>52,300</td>
+<td>57,700</td>
+<td>4,300</td>
+<td><strong>53,400</strong></td>
+<td>48.5%</td>
+</tr>
+<tr>
+<td><strong>30,000권</strong></td>
+<td><strong>165,000</strong></td>
+<td><strong>78,450</strong></td>
+<td><strong>86,550</strong></td>
+<td><strong>4,300</strong></td>
+<td><strong>82,250</strong></td>
+<td><strong>49.8%</strong></td>
+</tr>
+<tr>
+<td>50,000권</td>
+<td>275,000</td>
+<td>130,750</td>
+<td>144,250</td>
+<td>4,300</td>
+<td><strong>139,950</strong></td>
+<td>50.9%</td>
+</tr>
+</tbody>
+</table>
+<p><em>(단위: 만원)</em></p>
+<h3>5.5 연간 재무 전망</h3>
+<h4>Year 1 — 1인 운영, 현금흐름 극대화</h4>
+<table>
+<thead>
+<tr>
+<th>분기</th>
+<th>월평균 판매량</th>
+<th>Phase</th>
+<th>분기 매출</th>
+<th>분기 영업이익</th>
+<th>누적 영업이익</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>500권</td>
+<td>0 (1인)</td>
+<td>8,250</td>
+<td>2,379</td>
+<td>2,379</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>1,500권</td>
+<td>0 (1인)</td>
+<td>24,750</td>
+<td>6,705</td>
+<td>9,084</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>3,000권</td>
+<td>0→1</td>
+<td>49,500</td>
+<td>21,615</td>
+<td>30,699</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>5,000권</td>
+<td>1 (2인)</td>
+<td>82,500</td>
+<td>38,925</td>
+<td>69,624</td>
+</tr>
+</tbody>
+</table>
+<p><em>(단위: 만원)</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Year 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>연 매출</strong></td>
+<td><strong>약 16.5억원</strong></td>
+</tr>
+<tr>
+<td><strong>연 영업이익</strong></td>
+<td><strong>약 7.0억원</strong></td>
+</tr>
+<tr>
+<td><strong>연 영업이익률</strong></td>
+<td><strong>약 42.2%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1인 운영이기 때문에 매출의 42%가 그대로 이익이 된다.</strong> 5명을 뽑았다면 같은 매출에서 이익률은 30% 이하.</p>
+<h4>Year 2 — 검증된 유닛 이코노믹스로 스케일</h4>
+<table>
+<thead>
+<tr>
+<th>분기</th>
+<th>월평균 판매량</th>
+<th>Phase</th>
+<th>분기 매출</th>
+<th>분기 영업이익</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>7,000권</td>
+<td>1 (2인)</td>
+<td>115,500</td>
+<td>56,235</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>10,000권</td>
+<td>1→2</td>
+<td>165,000</td>
+<td>78,150</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>15,000권</td>
+<td>2 (4인)</td>
+<td>247,500</td>
+<td>117,225</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>20,000권</td>
+<td>2</td>
+<td>330,000</td>
+<td>159,600</td>
+</tr>
+</tbody>
+</table>
+<p><em>(단위: 만원)</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Year 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>연 매출</strong></td>
+<td><strong>약 85.8억원</strong></td>
+</tr>
+<tr>
+<td><strong>연 영업이익</strong></td>
+<td><strong>약 41.1억원</strong></td>
+</tr>
+<tr>
+<td><strong>연 영업이익률</strong></td>
+<td><strong>약 47.9%</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>Year 1~2 누적 현금흐름</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Year 1 누적 영업이익</td>
+<td>약 7.0억원</td>
+</tr>
+<tr>
+<td>Year 2 누적 영업이익</td>
+<td>약 41.1억원</td>
+</tr>
+<tr>
+<td><strong>2년 누적</strong></td>
+<td><strong>약 48.1억원</strong></td>
+</tr>
+</tbody>
+</table>
+<p>투자 없이, 2년 만에 약 48억원의 영업이익. 이것이 "현금흐름 우선" 전략의 결과다.</p>
+<h3>5.6 투자에 대한 입장</h3>
+<p><strong>투자가 필요한가? 아니다.</strong> 현금 수억원 보유, 월 225권만 팔면 흑자, Year 1 영업이익만 7억원. 생존을 위한 투자는 필요 없다.</p>
+<p><strong>그렇다면 왜 투자를 고려하는가?</strong></p>
+<p>이미 작동하는 엔진에 기름을 부어 폭발적으로 키우기 위해서다. 구체적으로:</p>
+<table>
+<thead>
+<tr>
+<th>투자금 용도</th>
+<th>금액 규모</th>
+<th>효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공격적 마케팅</td>
+<td>월 5~10억</td>
+<td>ROAS가 검증된 채널에 자금 집중, 월 5만건+ 돌파</td>
+</tr>
+<tr>
+<td>해외 진출</td>
+<td>10~20억</td>
+<td>일본/미국 현지 인쇄, 물류, 마케팅</td>
+</tr>
+<tr>
+<td>인쇄 내재화</td>
+<td>10~15억</td>
+<td>인쇄 원가 20,000원 → 10,000원 이하, 마진 극대화</td>
+</tr>
+<tr>
+<td>팀 빌딩</td>
+<td>10~15억</td>
+<td>CTO + 핵심 개발자, 글로벌 운영팀</td>
+</tr>
+</tbody>
+</table>
+<p><strong>50~100억원 이하의 투자는 받지 않는다.</strong> 소액 투자를 받아 IR에 시간을 쓰는 것은 제품 개발과 현금 창출에 방해가 된다. 투자를 받는 시점은 월 매출 5억 이상, 유닛 이코노믹스가 완전히 검증된 이후. 그때 50~100억원을 받아 글로벌 1위 개인화 동화책 회사로 만든다.</p>
+<h3>5.7 핵심 지표 (KPI)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>목표</th>
+<th>모니터링 주기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAC (고객획득비용)</td>
+<td>≤ 15,000원</td>
+<td>주간</td>
+</tr>
+<tr>
+<td>ROAS (광고수익률)</td>
+<td>≥ 300%</td>
+<td>주간</td>
+</tr>
+<tr>
+<td>인쇄 불량률</td>
+<td>≤ 0.5%</td>
+<td>일간</td>
+</tr>
+<tr>
+<td>AI 자동 처리율</td>
+<td>≥ 95%</td>
+<td>일간</td>
+</tr>
+<tr>
+<td>CS 응답시간</td>
+<td>≤ 2시간</td>
+<td>일간</td>
+</tr>
+<tr>
+<td>재구매율</td>
+<td>≥ 25% (12개월 내)</td>
+<td>월간</td>
+</tr>
+<tr>
+<td>NPS</td>
+<td>≥ 70</td>
+<td>월간</td>
+</tr>
+<tr>
+<td><strong>1인당 매출</strong></td>
+<td><strong>Phase 0: 전액, Phase 2: 연 20억+</strong></td>
+<td><strong>월간</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>5.8 리스크 및 대응</h3>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>영향</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인쇄 원가 상승</td>
+<td>마진 압축</td>
+<td>물량 협상, 복수 인쇄소 확보, 장기적 내재화</td>
+</tr>
+<tr>
+<td>CAC 상승</td>
+<td>수익성 악화</td>
+<td>오가닉/바이럴 채널 강화, 재구매 유도</td>
+</tr>
+<tr>
+<td>인쇄 불량 대량 발생</td>
+<td>재제작 비용 + 신뢰 하락</td>
+<td>Pre-flight Check 고도화, 샘플 인쇄 프로세스</td>
+</tr>
+<tr>
+<td>GPU 서버 장애</td>
+<td>주문 처리 중단</td>
+<td>멀티 서버 Failover, 클라우드 백업</td>
+</tr>
+<tr>
+<td>경쟁사 진입</td>
+<td>가격 경쟁</td>
+<td>정신의학 기반 차별화 (모방 불가 영역)</td>
+</tr>
+<tr>
+<td>시즌 편중</td>
+<td>비수기 매출 하락</td>
+<td>구독 모델, 다양한 기념일 마케팅</td>
+</tr>
+<tr>
+<td><strong>1인 리스크 (Phase 0)</strong></td>
+<td><strong>대표 번아웃/건강 이슈</strong></td>
+<td><strong>AI 자동화 극대화로 수동 업무 최소화, 조기에 Phase 1 전환</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 핵심 경쟁우위</h2>
+<ol>
+<li><strong>대체 불가능한 창업자</strong>: 수천 권 수동 제작 경험 + 정신의학 + 프로그래밍을 한 사람이 보유. 자동화 가능 영역과 제품 품질의 적정선을 아는 유일한 사람.</li>
+<li><strong>극단적 비용 구조</strong>: 1인 + AI로 운영. 고정비 650만원, BEP 월 225권. 경쟁사가 5명으로 할 일을 혼자 한다. 같은 매출에서 영업이익이 압도적으로 높다.</li>
+<li><strong>AI 자동화</strong>: 기존 수동 제작(3일) → 실시간. 6개 배경 제거 모델 + 포즈 분석 + 품질 자동 검수. 주문~배송까지 사람 개입 거의 0.</li>
+<li><strong>검증된 가격</strong>: 88,000원에도 팔림 → 55,000원은 대중화 가격.</li>
+<li><strong>기술 장벽</strong>: 포즈 분석 + 배경 제거 + 인쇄 품질 파이프라인은 빠른 복제 어려움.</li>
+<li><strong>네트워크 효과</strong>: 부모 커뮤니티 입소문 → 바이럴 구조 내재.</li>
+<li><strong>투자 불필요</strong>: 현금 보유 + 첫 달부터 흑자. 투자자의 돈이 아니라 고객의 돈으로 성장. 희석 없이 대표 지분 100% 유지 가능.</li>
+</ol>
+<hr />
+<h2>7. 기술 개요</h2>
+<h3>한 장으로 보는 파이프라인</h3>
+<pre><code>고객이 사진 업로드
+    ↓
+┌─────────────── AI 서버 (RTX GPU) ───────────────┐
+│  ① 배경 제거 (5개 AI 모델 자동 선택)              │
+│  ② 포즈 분석 (ViTPose — 17개 관절 감지)           │
+│  ③ 얼굴 포커싱 + 스마트 크롭                      │
+│  ④ 품질 자동 검수 (BGQA — 8개 항목 체크)          │
+└─────────────────────────────────────────────────┘
+    ↓
+동화책 장면에 자동 배치 (Config-Driven 레이아웃)
+    ↓
+모바일 미리보기 → 부모 승인
+    ↓
+인쇄 파일 자동 생성 → 인쇄사 자동 발주 → 배송
+</code></pre>
+<h3>핵심 기술 요소</h3>
+<p><strong>① 배경 제거 — 6중 모델 구조</strong></p>
+<p>단일 모델로는 모든 사진을 커버할 수 없다. 머리카락이 복잡한 사진, 장난감을 들고 있는 사진, HEIC 포맷 사진 등 케이스별로 최적의 모델이 다르다. 현재 6개 모델을 보유하고 있으며, 사진 특성에 따라 자동 선택한다.</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>용도</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BiRefNet-Portrait</td>
+<td>인물 전신 (기본)</td>
+<td>가장 빠름, 범용</td>
+</tr>
+<tr>
+<td>BiRefNet-HR-Matting</td>
+<td>머리카락/디테일</td>
+<td>알파 매팅 최고 품질</td>
+</tr>
+<tr>
+<td>BEN2</td>
+<td>복잡한 배경</td>
+<td>프리미엄 품질</td>
+</tr>
+<tr>
+<td>BiRefNet-HR</td>
+<td>고해상도 원본</td>
+<td>인쇄용 고화질</td>
+</tr>
+<tr>
+<td>BiRefNet-Dynamic</td>
+<td>적응형</td>
+<td>다양한 조건</td>
+</tr>
+<tr>
+<td>remove.bg API</td>
+<td>외부 폴백</td>
+<td>비표준 포맷 대응</td>
+</tr>
+</tbody>
+</table>
+<p>모든 모델은 서버 시작 시 GPU 메모리에 사전 로딩 + 워밍업하여, 첫 요청부터 0.5~2초 내 처리한다. FP16(반정밀도) 연산으로 메모리 사용량 절반, 처리 속도 2배.</p>
+<p><strong>② 포즈 분석 — ViTPose</strong></p>
+<p>아이 사진에서 17개 관절(코, 눈, 어깨, 팔꿈치, 손목, 엉덩이, 무릎, 발목 등)을 감지한다. 이 정보로:</p>
+<ul>
+<li>전신/반신/얼굴만 자동 분류</li>
+<li>손에 들고 있는 물건 감지 (잘리지 않게 보호)</li>
+<li>머리 꼭대기~발끝까지 정확한 영역 추출 (수동 크롭 불필요)</li>
+<li>동화책 장면별 요구사항(전신 필요, 상반신 필요)에 맞는 사진 자동 매칭</li>
+</ul>
+<p><strong>③ 품질 자동 검수 — BGQA (Background Quality Assessment)</strong></p>
+<p>인쇄 사고를 사전에 차단하는 AI 검수 시스템. 8개 항목을 자동 체크한다:</p>
+<table>
+<thead>
+<tr>
+<th>검수 항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>얼굴 영역 검증</td>
+<td>얼굴이 잘리거나 너무 작지 않은지</td>
+</tr>
+<tr>
+<td>마스크 무결성</td>
+<td>배경 제거가 깨끗한지</td>
+</tr>
+<tr>
+<td>구멍 감지</td>
+<td>전경에 뚫린 부분이 없는지</td>
+</tr>
+<tr>
+<td>색상 이상</td>
+<td>색 번짐이나 아티팩트 여부</td>
+</tr>
+<tr>
+<td>헤일로 감지</td>
+<td>경계면에 빛 번짐이 없는지</td>
+</tr>
+<tr>
+<td>전경 일관성</td>
+<td>색상/조명이 자연스러운지</td>
+</tr>
+<tr>
+<td>소지품 검증</td>
+<td>들고 있는 물건이 잘리지 않았는지</td>
+</tr>
+<tr>
+<td>잔여물 감지</td>
+<td>배경 찌꺼기가 남아있지 않은지</td>
+</tr>
+</tbody>
+</table>
+<p>아동(KID_PERSON), 성인(ADULT_PERSON), 사물(TOY_OBJECT) 등 케이스별로 다른 기준을 적용한다. 0~100점으로 점수화하여, 기준 미달 시 자동 플래그.</p>
+<p><strong>④ Config-Driven 동화책 시스템</strong></p>
+<p>새로운 테마를 추가할 때 코드를 수정하지 않는다. JSON 설정 파일 하나로 동화책 전체를 정의한다:</p>
+<pre><code>하나의 config = {
+    bookMeta: 제본 규격 (가로 250mm × 세로 200mm, 도련 3mm)
+    illustrations: 일러스트 20장 (webp)
+    versions: {
+        A: 베이비 모드 (3~5세) — 의성어 중심 20페이지
+        B: 키즈 모드 (6~9세) — 의미 설명 20페이지
+    }
+    각 페이지: 장면, 일러스트, 텍스트, 사진 배치 좌표
+}
+</code></pre>
+<p>이 구조 덕분에 대표가 새 스토리를 설계하면, 일러스트 + config 파일만 넘기면 바로 프로덕션에 올라간다. 개발자가 코드를 건드릴 필요 없음.</p>
+<p><strong>⑤ 한국어 자연어 처리</strong></p>
+<p>아이 이름이 동화 텍스트에 자연스럽게 들어가야 한다. 한국어는 받침 유무에 따라 조사가 달라진다 ("도현이가" vs "하준이가", "도현이를" vs "하준이를"). 9가지 조사 변환을 자동 처리하여, 어떤 이름을 넣어도 문법적으로 자연스러운 동화가 생성된다.</p>
+<h3>왜 쉽게 복제할 수 없는가</h3>
+<ol>
+<li><strong>6개 AI 모델의 조합</strong>: 단일 배경 제거 API를 쓰는 것과 차원이 다름. 사진 특성별 최적 모델 선택 로직은 수천 장의 아이 사진 처리 경험에서 나옴.</li>
+<li><strong>아이 사진 특화</strong>: 일반적인 배경 제거와 달리, 아이의 머리카락, 손에 든 장난감, 모자, 특이한 포즈 등 아동 사진 고유의 문제를 해결.</li>
+<li><strong>인쇄 품질 기준</strong>: 화면에서 괜찮아 보이는 것과 300DPI 인쇄에서 괜찮은 것은 다름. 인쇄 사고를 0%에 가깝게 만드는 검수 기준은 실제 인쇄 경험 없이는 만들 수 없음.</li>
+<li><strong>파이프라인 통합</strong>: 배경 제거 → 포즈 분석 → 스마트 크롭 → 품질 검수 → 장면 배치 → 미리보기 → 인쇄 파일 생성이 하나의 자동화된 체인으로 동작. 각각은 오픈소스로 가능하지만, 이 체인을 인쇄 품질 수준으로 안정화하는 데 시간이 걸림.</li>
+</ol>
+<hr />
+<h2>8. 제품 라인업 및 테마 확장 계획</h2>
+<h3>현재 보유 테마</h3>
+<table>
+<thead>
+<tr>
+<th>테마</th>
+<th>코드명</th>
+<th>대상 연령</th>
+<th>핵심 메시지</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>노미네 왕국 (이름 동화)</td>
+<td>NAME</td>
+<td>0~9세</td>
+<td>"네 이름에는 부모의 사랑이 담겨있다"</td>
+<td>완성 (A/B 버전)</td>
+</tr>
+<tr>
+<td>생일 동화</td>
+<td>BDAY</td>
+<td>1~5세</td>
+<td>생일 축하 스토리</td>
+<td>기존 수동 제작</td>
+</tr>
+<tr>
+<td>고양이 동화</td>
+<td>CAT</td>
+<td>3~7세</td>
+<td>반려동물과 아이</td>
+<td>기존 수동 제작</td>
+</tr>
+<tr>
+<td>라이언 동화</td>
+<td>RYAN</td>
+<td>3~7세</td>
+<td>모험 스토리</td>
+<td>기존 수동 제작</td>
+</tr>
+<tr>
+<td>ABC 동화</td>
+<td>ABC</td>
+<td>4~8세</td>
+<td>영어 학습</td>
+<td>기존 수동 제작</td>
+</tr>
+<tr>
+<td>루브르 동화</td>
+<td>LOUVRE</td>
+<td>5~9세</td>
+<td>미술 감상</td>
+<td>기존 수동 제작</td>
+</tr>
+</tbody>
+</table>
+<p><strong>노미네 왕국 (NAME)</strong> 이 자동화 파이프라인으로 전환된 첫 번째 테마. A/B 두 버전을 보유:</p>
+<ul>
+<li><strong>버전 A — 베이비 모드 (3~5세)</strong>: 의성어/의태어 중심. "뾰로롱", "보글보글", "반짝반짝" 등. 부모가 읽어줄 때 아이가 소리에 반응하도록 설계.</li>
+<li><strong>버전 B — 키즈 모드 (6~9세)</strong>: 각 재료의 의미를 설명. "별 조각 = 어둠 속에서도 빛나는 용기", "코끼리의 숨결 = 건강", "거인의 눈물 = 공감 능력". 아이가 자기 이름의 의미를 이해할 수 있는 수준.</li>
+</ul>
+<p>두 버전 모두 20페이지, 동일한 일러스트 세트를 사용하되 텍스트만 다름. 부모가 미리보기에서 선택.</p>
+<h3>페이지 유형 (Config 시스템이 지원하는 레이아웃)</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>설명</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일러스트 전면</td>
+<td>일러스트 배경 + 텍스트 오버레이</td>
+<td>스토리 본문 (대부분)</td>
+</tr>
+<tr>
+<td>프레임</td>
+<td>일러스트 속 액자에 아이 사진 삽입</td>
+<td>프롤로그 (아이 등장)</td>
+</tr>
+<tr>
+<td>폴라로이드 앨범</td>
+<td>6칸 폴라로이드 레이아웃 + 터치 드래그</td>
+<td>에필로그 (가족 사진)</td>
+</tr>
+</tbody>
+</table>
+<h3>테마 확장 계획</h3>
+<p><strong>단기 (6개월 내) — 기존 테마 자동화 전환</strong></p>
+<p>기존 6개 테마(BDAY, CAT, RYAN 등)를 수동 InDesign 워크플로우에서 Config-Driven 자동화로 전환. 테마당 필요한 작업:</p>
+<ol>
+<li>일러스트 20장을 webp로 변환 (1일)</li>
+<li>JSON config 작성 — 각 페이지의 텍스트, 레이아웃, 사진 배치 좌표 (2~3일)</li>
+<li>인쇄 규격 검증 + 테스트 인쇄 (2~3일)</li>
+</ol>
+<p>테마당 약 1주일. 6개 테마 전체 전환에 약 2개월.</p>
+<p><strong>중기 (6~12개월) — 정신의학 기반 신규 시리즈</strong></p>
+<p>이것이 경쟁사가 따라올 수 없는 영역. 대표의 정신의학 전문성이 직접 반영되는 테마들:</p>
+<table>
+<thead>
+<tr>
+<th>시리즈</th>
+<th>대상 상황</th>
+<th>핵심 설계 원리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>감정 동화</td>
+<td>분리불안, 첫 등원</td>
+<td>불안 → 안전감 전환 구조</td>
+</tr>
+<tr>
+<td>관계 동화</td>
+<td>동생 탄생, 형제 갈등</td>
+<td>역할 인식 + 긍정적 정체성</td>
+</tr>
+<tr>
+<td>성장 동화</td>
+<td>배변 훈련, 식습관</td>
+<td>행동 변화를 놀이로 접근</td>
+</tr>
+<tr>
+<td>가족 동화</td>
+<td>한부모, 조부모 양육</td>
+<td>다양한 가족 구조 긍정</td>
+</tr>
+</tbody>
+</table>
+<p>각 테마는 A(유아)/B(아동) 두 버전으로 제작. Config 시스템이 이미 이 구조를 지원하므로, 대표가 스토리 + 일러스트를 완성하면 1주일 내 출시 가능.</p>
+<p><strong>장기 (1~2년) — 플랫폼 확장</strong></p>
+<ul>
+<li>다국어 버전: 동일 일러스트 + config의 텍스트만 번역. 영어, 일본어, 중국어 순.</li>
+<li>커스텀 테마 API: B2B 파트너(어린이집, 소아과)가 자체 스토리를 올릴 수 있는 구조.</li>
+<li>구독 모델: 아이 연령에 맞춰 분기별 자동 발송 (성장에 따라 테마 자동 추천).</li>
+</ul>
+<h3>테마 확장의 경제성</h3>
+<p>새 테마 추가 비용:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>비용</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일러스트 20장</td>
+<td>약 50만원</td>
+<td>Midjourney + 보정</td>
+</tr>
+<tr>
+<td>스토리 설계</td>
+<td>대표 직접</td>
+<td>정신의학 기반 설계</td>
+</tr>
+<tr>
+<td>Config + 테스트</td>
+<td>대표 + AI 어시스턴트 1주일</td>
+<td>기존 시스템 활용</td>
+</tr>
+<tr>
+<td>테스트 인쇄</td>
+<td>약 10만원</td>
+<td>2~3회</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>약 60~100만원</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>테마 하나가 월 1,000권만 팔려도 월 이익 약 2,885만원. 투자 회수에 1일도 안 걸림.</p>
+<hr />
+<h2>9. 개인정보 보호</h2>
+<p>아이 사진은 가장 민감한 개인정보 중 하나다. 부모가 안심하고 사진을 맡길 수 있는 기술적 조치가 필수.</p>
+<h3>현재 구현된 기술적 보호 조치</h3>
+<p><strong>전송 구간</strong></p>
+<ul>
+<li>모든 사진 업로드/다운로드는 HTTPS(TLS 1.2+) 암호화</li>
+<li>AI 서버 접근은 Cloudflare Tunnel 경유 (서버 IP 비노출, DDoS 방어 포함)</li>
+<li>고정 도메인(<code>ai.monviestory.co.kr</code>) 사용, 직접 포트 노출 없음</li>
+</ul>
+<p><strong>처리 구간</strong></p>
+<ul>
+<li>AI 처리 서버는 자체 보유 GPU 서버 (외부 클라우드가 아닌 물리 서버)</li>
+<li>사진은 처리 중 메모리에만 존재, 처리 완료 즉시 메모리 해제 (<code>clear_gpu_memory()</code>)</li>
+<li>업로드 파일 검증: 허용 포맷(JPEG, PNG, WebP, HEIC)만 수용, 20MB 제한</li>
+<li>CORS 정책으로 허가된 도메인에서만 API 호출 가능</li>
+<li>요청 로깅: 모든 API 호출을 IP, 경로, 응답코드와 함께 기록 (감사 추적)</li>
+</ul>
+<p><strong>저장 구간</strong></p>
+<ul>
+<li>최종 인쇄 파일: Firebase/NAS에 암호화 저장</li>
+<li>배경 제거된 중간 파일: 인쇄 완료 후 삭제 대상</li>
+<li>고객 원본 사진: 서비스 완료 후 일정 기간 내 삭제</li>
+</ul>
+<h3>향후 강화 계획</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>현재</th>
+<th>목표</th>
+<th>시기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사진 보존 기간 정책</td>
+<td>비공식</td>
+<td>명문화 (인쇄 후 30일 자동 삭제)</td>
+<td>즉시</td>
+</tr>
+<tr>
+<td>저장소 암호화</td>
+<td>전송 암호화만</td>
+<td>저장 시 AES-256 암호화 (at-rest)</td>
+<td>3개월 내</td>
+</tr>
+<tr>
+<td>접근 권한 분리</td>
+<td>관리자 공용</td>
+<td>역할별 접근 제어 (RBAC)</td>
+<td>6개월 내</td>
+</tr>
+<tr>
+<td>개인정보 처리방침</td>
+<td>기본</td>
+<td>아동 데이터 특화 방침 공시</td>
+<td>즉시</td>
+</tr>
+<tr>
+<td>해외 진출 시</td>
+<td>—</td>
+<td>GDPR(EU), COPPA(미국) 준수</td>
+<td>해외 진출 전</td>
+</tr>
+</tbody>
+</table>
+<h3>우리의 구조적 이점</h3>
+<p>대부분의 커스텀 동화책 업체는 고객 사진을 외부 클라우드 API(remove.bg 등)로 보내 처리한다. 우리는 <strong>자체 GPU 서버에서 처리</strong>하므로 아이 사진이 외부 서비스로 전송되지 않는다. 이것은 개인정보 관점에서 명확한 차별점이며, 부모에게 신뢰를 줄 수 있는 마케팅 포인트이기도 하다.</p>
+<p>(참고: remove.bg API는 비표준 포맷 폴백용으로만 사용하며, 기본 처리 경로가 아님)</p>
+<hr />
+<h2>10. 기술 마일스톤</h2>
+<h3>완료된 것 (현재)</h3>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>상세</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 배경 제거</td>
+<td>6개 모델 (Portrait, HR-Matting, BEN2 등)</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>포즈 분석</td>
+<td>ViTPose 17개 관절 감지 + BlazePose 매핑</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>스마트 크롭</td>
+<td>포즈 기반 자동 영역 추출, 손/발/머리 외삽 보정</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>품질 자동 검수</td>
+<td>BGQA 8개 항목, 케이스별 기준 적용</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>모바일 미리보기 앱</td>
+<td>캐러셀, 터치 드래그, 프레임/폴라로이드 레이아웃</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>Config-Driven 테마</td>
+<td>JSON 설정만으로 새 동화책 생성</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>한국어 조사 처리</td>
+<td>9가지 조사 자동 변환 (받침 감지)</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>서버 최적화</td>
+<td>FP16, 워밍업, 모델 캐시, GPU 메모리 관리</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>HEIC 지원</td>
+<td>iPhone 사진 자동 변환</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>첫 번째 자동화 테마</td>
+<td>노미네 왕국 A/B 버전, 20페이지, 일러스트 20장</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>기존 백엔드 운영</td>
+<td>주문→인쇄→배송 크론잡 7종 자동화</td>
+<td>✅ 완료</td>
+</tr>
+<tr>
+<td>알림톡 자동 발송</td>
+<td>주문 확인, 미리보기 발송, 인쇄 시작, 배송 알림</td>
+<td>✅ 완료</td>
+</tr>
+</tbody>
+</table>
+<h3>남은 것 — 런칭까지</h3>
+<table>
+<thead>
+<tr>
+<th>마일스톤</th>
+<th>내용</th>
+<th>예상 기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>백엔드 통합</strong></td>
+<td>기존 Firebase 백엔드 ↔ AI 서버 자동 연결. <code>data_submitted</code> 시 자동 AI 처리 트리거, 결과를 Firestore에 저장</td>
+<td>2~3주</td>
+</tr>
+<tr>
+<td><strong>인쇄 파일 자동 생성</strong></td>
+<td>미리보기 승인 → 300DPI 인쇄용 PDF 자동 생성 (현재 미리보기는 웹 해상도)</td>
+<td>2~3주</td>
+</tr>
+<tr>
+<td><strong>상태 전이 자동화</strong></td>
+<td><code>data_submitted</code> → <code>user_reviewing</code> 구간의 5단계 수동 과정을 1단계로 축소</td>
+<td>1~2주</td>
+</tr>
+<tr>
+<td><strong>기존 테마 전환</strong></td>
+<td>6개 기존 테마를 Config-Driven 구조로 이관 (테마당 1주)</td>
+<td>6~8주</td>
+</tr>
+<tr>
+<td><strong>BGQA 임계값 보정</strong></td>
+<td>실제 인쇄 결과와 대조하여 검수 기준 최적화 (현재는 보수적 기본값)</td>
+<td>지속적</td>
+</tr>
+</tbody>
+</table>
+<h3>스케일링 단계 — 월 1만건 이상</h3>
+<table>
+<thead>
+<tr>
+<th>마일스톤</th>
+<th>내용</th>
+<th>트리거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPU 증설</strong></td>
+<td>RTX 4070 Super 1장 → 2~4장. 현재 서버에 슬롯 여유 있음</td>
+<td>월 3,000건 초과 시</td>
+</tr>
+<tr>
+<td><strong>클라우드 하이브리드</strong></td>
+<td>피크 시간대 클라우드 GPU(RunPod, Lambda 등) 자동 스케일아웃</td>
+<td>월 10,000건 초과 시</td>
+</tr>
+<tr>
+<td><strong>배치 처리 분리</strong></td>
+<td>실시간 처리(미리보기)와 배치 처리(인쇄 파일)를 별도 큐로 분리</td>
+<td>월 10,000건 초과 시</td>
+</tr>
+<tr>
+<td><strong>CDN 캐시</strong></td>
+<td>일러스트/정적 에셋 CDN 서빙 (Cloudflare Cache)</td>
+<td>월 5,000건 초과 시</td>
+</tr>
+<tr>
+<td><strong>모니터링 고도화</strong></td>
+<td>GPU 사용률, 큐 대기시간, 에러율 실시간 대시보드</td>
+<td>GPU 증설과 동시</td>
+</tr>
+</tbody>
+</table>
+<h3>현실적인 타임라인</h3>
+<pre><code>현재 ────────── +1개월 ────────── +3개월 ────────── +6개월
+  │                │                 │                 │
+  │  백엔드 통합     │  기존 6개 테마    │  GPU 증설 +      │
+  │  인쇄파일 생성   │  자동화 전환 완료  │  클라우드 하이브리드│
+  │  상태 자동화     │  BGQA 보정 완료   │  신규 테마 3종+   │
+  │                │                 │  다국어 기반 구축  │
+  │                │                 │                 │
+  └─ 자동화 런칭 ──┘─ 풀 라인업 ─────┘─ 스케일 준비 ───┘
+</code></pre>
+<p><strong>핵심 메시지</strong>: AI 파이프라인의 핵심 기술(배경 제거, 포즈 분석, 품질 검수, 미리보기)은 이미 완성되어 있다. 남은 것은 기존 운영 시스템과의 통합, 그리고 검증된 구조를 나머지 테마에 복제하는 작업이다. 기술적 리스크가 아닌 실행의 문제.</p>
+<hr />
+<p><em>작성일: 2026-02-22</em>
+<em>몽비스토리</em></p>
+  </article>
+</main>
+
+<!-- 푸터 -->
+<footer class="bg-ink-900 text-ink-400 text-center py-8 text-sm mt-20">
+  <p>© 2026 몽비스토리 · 본 문서는 기밀 사업 계획서입니다.</p>
+</footer>
+
+<script>
+// h2 태그에 자동 id 부여 (네비게이션 연동)
+document.querySelectorAll('.prose h2').forEach((h2, i) => {
+  h2.id = 'section-' + (i + 1);
+});
+
+// 스크롤 시 현재 섹션 하이라이트
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('.prose h2');
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('text-brand-600', a.getAttribute('href') === '#' + current);
+    a.classList.toggle('text-ink-500', a.getAttribute('href') !== '#' + current);
+  });
+});
+
+// 부드러운 스크롤
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
