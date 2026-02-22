@@ -1238,21 +1238,55 @@ Phase 2: 4,300만원 ÷ 2.885만원 = 월 1,490권
 <hr />
 <h2>7. 기술 개요</h2>
 <h3>한 장으로 보는 파이프라인</h3>
-<pre><code>고객이 사진 업로드
-    ↓
-┌─────────────── AI 서버 (RTX GPU) ───────────────┐
-│  ① 배경 제거 (5개 AI 모델 자동 선택)              │
-│  ② 포즈 분석 (ViTPose — 17개 관절 감지)           │
-│  ③ 얼굴 포커싱 + 스마트 크롭                      │
-│  ④ 품질 자동 검수 (BGQA — 8개 항목 체크)          │
-└─────────────────────────────────────────────────┘
-    ↓
-동화책 장면에 자동 배치 (Config-Driven 레이아웃)
-    ↓
-모바일 미리보기 → 부모 승인
-    ↓
-인쇄 파일 자동 생성 → 인쇄사 자동 발주 → 배송
-</code></pre>
+
+<div style="margin:2rem 0; border-radius:0.75rem; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+  <!-- 시작: 사진 업로드 -->
+  <div style="background:#ecb96e; color:#633116; text-align:center; padding:0.75rem; font-weight:700; font-size:0.95rem;">
+    고객이 사진 업로드
+  </div>
+  <div style="text-align:center; background:#f6f7f9; padding:0.25rem 0; font-size:1.2rem; color:#8794a8;">&#9660;</div>
+  <!-- AI 서버 -->
+  <div style="background:#313945; padding:1.25rem 1.5rem;">
+    <div style="text-align:center; margin-bottom:1rem;">
+      <span style="background:#ecb96e; color:#633116; padding:0.3rem 1rem; border-radius:2rem; font-size:0.8rem; font-weight:700;">AI 서버 (RTX GPU)</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0.5rem;">
+      <div style="background:#414c60; border-radius:0.5rem; padding:0.65rem 0.85rem; display:flex; align-items:center; gap:0.5rem;">
+        <span style="background:#ecb96e; color:#633116; width:1.5rem; height:1.5rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0;">1</span>
+        <span style="color:#d5d9e2; font-size:0.85rem;">배경 제거 <span style="color:#8794a8; font-size:0.75rem;">(5개 AI 모델 자동 선택)</span></span>
+      </div>
+      <div style="background:#414c60; border-radius:0.5rem; padding:0.65rem 0.85rem; display:flex; align-items:center; gap:0.5rem;">
+        <span style="background:#ecb96e; color:#633116; width:1.5rem; height:1.5rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0;">2</span>
+        <span style="color:#d5d9e2; font-size:0.85rem;">포즈 분석 <span style="color:#8794a8; font-size:0.75rem;">(ViTPose — 17개 관절)</span></span>
+      </div>
+      <div style="background:#414c60; border-radius:0.5rem; padding:0.65rem 0.85rem; display:flex; align-items:center; gap:0.5rem;">
+        <span style="background:#ecb96e; color:#633116; width:1.5rem; height:1.5rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0;">3</span>
+        <span style="color:#d5d9e2; font-size:0.85rem;">얼굴 포커싱 + 스마트 크롭</span>
+      </div>
+      <div style="background:#414c60; border-radius:0.5rem; padding:0.65rem 0.85rem; display:flex; align-items:center; gap:0.5rem;">
+        <span style="background:#ecb96e; color:#633116; width:1.5rem; height:1.5rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0;">4</span>
+        <span style="color:#d5d9e2; font-size:0.85rem;">품질 자동 검수 <span style="color:#8794a8; font-size:0.75rem;">(BGQA — 8개 항목)</span></span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; background:#f6f7f9; padding:0.25rem 0; font-size:1.2rem; color:#8794a8;">&#9660;</div>
+  <!-- 하단 3단계 -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; background:#f6f7f9;">
+    <div style="text-align:center; padding:0.85rem 0.5rem; border-right:1px solid #d5d9e2;">
+      <div style="font-weight:600; color:#384151; font-size:0.9rem; margin-bottom:0.25rem;">장면 자동 배치</div>
+      <div style="color:#8794a8; font-size:0.75rem;">Config-Driven 레이아웃</div>
+    </div>
+    <div style="text-align:center; padding:0.85rem 0.5rem; border-right:1px solid #d5d9e2;">
+      <div style="font-weight:600; color:#384151; font-size:0.9rem; margin-bottom:0.25rem;">모바일 미리보기</div>
+      <div style="color:#8794a8; font-size:0.75rem;">부모 승인</div>
+    </div>
+    <div style="text-align:center; padding:0.85rem 0.5rem;">
+      <div style="font-weight:600; color:#384151; font-size:0.9rem; margin-bottom:0.25rem;">인쇄 → 배송</div>
+      <div style="color:#8794a8; font-size:0.75rem;">자동 발주 + 추적</div>
+    </div>
+  </div>
+</div>
+
 <h3>핵심 기술 요소</h3>
 <p><strong>① 배경 제거 — 6중 모델 구조</strong></p>
 <p>단일 모델로는 모든 사진을 커버할 수 없다. 머리카락이 복잡한 사진, 장난감을 들고 있는 사진, HEIC 포맷 사진 등 케이스별로 최적의 모델이 다르다. 현재 6개 모델을 보유하고 있으며, 사진 특성에 따라 자동 선택한다.</p>
